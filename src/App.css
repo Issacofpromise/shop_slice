@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+.main-bg {
+  height : 300px;
+  background-image : url('./img/bg.png');
+  background-size : cover;
+  background-position : center;
+}
+.left {
+  text-align: left;
+}.start {
+  opacity : 0
+}.right {
+  text-align: right;
+}.sus{transform: translateY(100px);}
+.end {
+  opacity : 1;  transition : opacity 0.5s;
+}  .start1 { transform: scale(0); 
+}
+.end1 {
+  transform: scale(1); transition : all 0.3s;
+}.pit{cursor: pointer;}
+.acc{width: 20%;float:right}
