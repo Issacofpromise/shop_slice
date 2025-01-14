@@ -1,5 +1,5 @@
 import { useNavigate} from 'react-router-dom';import {useState, useEffect} from 'react';
-function Myl(s){let navi = useNavigate();let [fe, de] = useState('');
+function Myl(s){let navi = useNavigate();let [fe, de] = useState('');    
 useEffect(()=>{ setTimeout(()=>{ de('end') }, 300);return ()=>{ de('') } }, []);
 return (
 <div className={'col-md-4 start ' + fe}>  

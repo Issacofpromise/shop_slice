@@ -12,6 +12,11 @@ function App() {
   let [sh, setSh] = useState(dt);  let navi = useNavigate(); 
   let [ou, setOu] = useState(1); let [is, ng] = useState(false);
   let [pg, di] = useState(false);  let [재고, 재고변경] = useState([10,11,12]);
+  useEffect(() => {
+    console.log('앱 초기화 실행');
+      localStorage.removeItem('watched'); // 최근 본 상품 초기화
+      localStorage.setItem('initialized', 'true'); // 초기화 완료 표시
+      }, []);
   let watched = JSON.parse(localStorage.getItem('watched')) || [];
 watched = watched.map(x => parseInt(x)); console.log(watched);
 let ult = useQuery(['작명'], ()=>
@@ -27,14 +32,9 @@ useEffect(()=>{if( count != 0 && count<3) {setAge(age+1)}}, [count])
         <Container>
 <Navbar.Brand className='pit' onClick={(e)=>{ navi('/');e.preventDefault()}}>Home</Navbar.Brand>
           <Nav className="me-auto">
-<Nav.Link onClick={()=>{ navi(-1) }}>Back</Nav.Link>
  <Nav.Link onClick={()=>{ navi('/cart') }}>Cart</Nav.Link>
- <Nav.Link onClick={(e)=>{ navi('/about');e.preventDefault()}}>About</Nav.Link>
  <Nav.Link onClick={(e)=>{navi('/about/member');e.preventDefault()}}>Member</Nav.Link>
  <Nav.Link onClick={(e)=>{ navi('/about/location');e.preventDefault()}}>location</Nav.Link>
- <Nav.Link onClick={() => {let so = [...sh];
-        so.sort((a, b) => a.title.localeCompare(b.title));
-        setSh(so)}}>title기준 오름차순</Nav.Link>
 </Nav><Nav className="ms-auto">{ult.isLoading?'loading':ult.data.name}</Nav> 
 </Container></Navbar> 
     <Accordion defaultActiveKey="1" className='acc'>

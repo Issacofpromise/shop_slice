@@ -12,7 +12,7 @@ let n= p.sh.findIndex(x => x.id == id);let  [ow, th] = useState(true);
 let [탭, 변] = useState(0); let dp=useDispatch();
 let [fe, de] = useState(''); let {재고}= useContext(Con);
 setTimeout(()=>{ de('end') }, 300); 
-setTimeout(()=>{ th(false);},2000);
+setTimeout(()=>{ th(false);},5000);
   let [num, setNum] = useState('');
 useEffect(()=>{ if (isNaN(num) == true){ alert('숫자만 입력하세요.')}}, [num]);
 if (n == -1) { return (  <div>
@@ -21,7 +21,7 @@ if (n == -1) { return (  <div>
     </div>   ); };
 return ( 
 <div className={'container start ' + fe}>
-{ ow && <div className="alert alert-warning">2초이내 구매 시 {재고[0]} % 할인</div>}
+{ ow && <div className="alert alert-warning">5초이내 구매 시 {재고[0]} % 할인</div>}
   <div className="row">
     <div className="col-md-6">
       <img src={`https://codingapple1.github.io/shop/shoes${parseInt(id)+1}.jpg`} width="100%" />
